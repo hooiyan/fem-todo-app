@@ -1,5 +1,12 @@
+import AppHeader from "./components/AppHeader"
+import styles from "./styles/App.module.css"
+
 function App() {
-  return <h1>Hello React</h1>
+  return (
+    <div className={styles.app}>
+      <AppHeader />
+    </div>
+  )
 }
 
 export default App
