@@ -1,0 +1,6 @@
+.text {
+  color: var(--lt-dark-grayish-blue);
+  font-size: 1.4rem;
+  margin: 40px 0;
+  text-align: center;
+}

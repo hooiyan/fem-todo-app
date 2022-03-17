@@ -1,4 +1,20 @@
-.todoLogo {
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.todoText {
+  color: var(--white);
+  font-size: 2.5rem;
   font-weight: var(--font-weight-bold);
+  letter-spacing: 15px;
+  line-height: 0;
   text-transform: uppercase;
+}
+
+.themeToggler {
+  cursor: pointer;
+  height: 20px;
+  width: 20px;
 }

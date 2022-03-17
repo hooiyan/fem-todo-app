@@ -1,0 +1,7 @@
+.app {
+  background-image: url("../images/bg-mobile-light.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 100%;
+  padding: 48px 24px;
+}

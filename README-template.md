@@ -66,6 +66,7 @@ Use this section to outline areas that you want to continue focusing on in futur
 ### Useful resources
 
 - [Create custom checkboxes](https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_custom_checkbox) - This has helped me in creating custom checkboxed that are used in the project.
+- [Gradient borders in CSS](https://css-tricks.com/gradient-borders-in-css/)
 
 ## Author
 

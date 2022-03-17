@@ -1,0 +1,26 @@
+.todoListContainer {
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+
+.todoList {
+  background-color: var(--white);
+  border-radius: var(--border-radius);
+}
+
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--white);
+  border-bottom-left-radius: var(--border-radius);
+  border-bottom-right-radius: var(--border-radius);
+  color: var(--lt-dark-grayish-blue);
+  font-size: 1.2rem;
+  letter-spacing: -0.17px;
+  padding: 16px 20px 20px 20px;
+}
+
+.clearCompleted:hover {
+  color: var(--lt-very-dark-grayish-blue);
+  cursor: pointer;
+}

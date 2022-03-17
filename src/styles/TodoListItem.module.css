@@ -1,0 +1,22 @@
+
+
+.todoListItem {
+  border-bottom: 1px solid var(--lt-very-light-grayish-blue);
+  color: var(--lt-very-dark-grayish-blue);
+  cursor: pointer;
+  font-size: 1.2rem;
+  list-style: none;
+  padding: 19px 20px 19px 52px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+
+.todoContent {
+  margin-right: 12px;
+}
+
+.crossIcon {
+  height: 12px;
+  width: 12px;
+}
