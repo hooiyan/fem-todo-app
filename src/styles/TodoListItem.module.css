@@ -14,6 +14,10 @@
 
 .todoContent {
   margin-right: 12px;
+
+  /* After the user checks the complete button */
+  /* color: var(--lt-light-grayish-blue);
+  text-decoration: line-through; */
 }
 
 .crossIcon {
