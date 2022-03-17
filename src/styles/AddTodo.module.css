@@ -64,7 +64,7 @@
   font-family: var(--font-family);
   margin-top: 40px;
   margin-bottom: 16px;
-  padding: 18px 20px 18px 52px;
+  padding: 18px 20px 18px var(--small-left-padding);
   width: 100%;
 }
 
@@ -72,4 +72,41 @@
   color: var(--lt-dark-grayish-blue);
   font-size: 1.2rem;
   letter-spacing: -0.17px;
+}
+
+@media only screen and (min-width: 600px) {
+  .container {
+    left: 24px;
+  }
+
+  .textbox {
+    font-size: 1.4rem;
+    letter-spacing: -0.25px;
+    padding: 18px 20px 18px var(--larger-left-padding);
+  }
+
+  .textbox::placeholder {
+    font-size: 1.4rem;
+  }
+}
+
+@media only screen and (min-width: 990px) {
+  /* TODO: Adjust the bottom and left values */
+  .container {
+    bottom: 55%;
+  }
+
+  .customCheckbox {
+    height: 24px;
+    width: 24px;
+  }
+
+  .textbox {
+    font-size: 1.8rem;
+    margin-bottom: 24px;
+  }
+
+  .textbox::placeholder {
+    font-size: 1.8rem;
+  }
 }

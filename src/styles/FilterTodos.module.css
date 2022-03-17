@@ -1,0 +1,25 @@
+.filterTodosContainer {
+  display: flex;
+  justify-content: space-between;
+  color: var(--lt-dark-grayish-blue);
+  font-size: 1.4rem;
+  font-weight: var(--font-weight-bold);
+}
+
+.selected {
+  color: var(--primary-bright-blue);
+}
+
+.option {
+  cursor: pointer;
+}
+
+.option:hover {
+  color: var(--lt-very-dark-grayish-blue);
+}
+
+@media only screen and (min-width: 600px) {
+  .filterTodosContainer {
+    font-size: 1.2rem;
+  }
+}

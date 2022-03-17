@@ -8,13 +8,15 @@ import styles from "./styles/App.module.css"
 function App() {
   return (
     <div className={styles.app}>
-      <AppHeader />
-      <main>
-        <AddTodo />
-        <TodoList />
-        <FilterTodosMobile />
-      </main>
-      <Information />
+      <div className={styles.wrapper}>
+        <AppHeader />
+        <main>
+          <AddTodo />
+          <TodoList />
+          <FilterTodosMobile />
+        </main>
+        <Information />
+      </div>
     </div>
   )
 }

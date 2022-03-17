@@ -1,12 +1,10 @@
-
-
 .todoListItem {
   border-bottom: 1px solid var(--lt-very-light-grayish-blue);
   color: var(--lt-very-dark-grayish-blue);
   cursor: pointer;
   font-size: 1.2rem;
   list-style: none;
-  padding: 19px 20px 19px 52px;
+  padding: 19px 20px 19px var(--small-left-padding);
   position: relative;
   display: flex;
   justify-content: space-between;
@@ -23,4 +21,24 @@
 .crossIcon {
   height: 12px;
   width: 12px;
+}
+
+@media only screen and (min-width: 600px) {
+  .todoListItem {
+    font-size: 1.4rem;
+    letter-spacing: -0.25px;
+    padding: 21px 24px 21px var(--larger-left-padding);
+  }
+}
+
+@media only screen and (min-width: 990px) {
+  .todoListItem {
+    font-size: 1.8rem;
+    padding: 21px 24px 21px 62px;
+  }
+  
+  .crossIcon {
+    height: 18px;
+    width: 18px;
+  }
 }

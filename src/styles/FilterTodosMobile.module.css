@@ -1,24 +1,19 @@
-.filterTodosContainer {
-  display: flex;
-  justify-content: space-between;
+.mobile {
   background-color: var(--white);
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
-  color: var(--lt-dark-grayish-blue);
-  font-size: 1.4rem;
-  font-weight: var(--font-weight-bold);
   margin-top: 16px;
-  padding: 15px 80px;
+  padding: 15px 30px;
 }
 
-.selected {
-  color: var(--primary-bright-blue);
+@media only screen and (min-width: 375px) {
+  .mobile {
+    padding: 15px 80px;
+  }
 }
 
-.option {
-  cursor: pointer;
-}
-
-.option:hover {
-  color: var(--lt-very-dark-grayish-blue);
+@media only screen and (min-width: 600px) {
+  .mobile {
+    display: none;
+  }
 }

@@ -3,7 +3,7 @@
   display: block;
   position: absolute;
   left: 20px;
-  top: 16px;
+  top: 15px;
 }
 
 /* Hide the browser's default checkbox */
@@ -69,4 +69,39 @@
   left: 5px;
   height: 9px;
   width: 11px;
+}
+
+@media only screen and (min-width: 600px) {
+  .container {
+    top: 17px;
+    left: 24px;
+  }
+}
+
+@media only screen and (min-width: 990px) {
+  /* Hide the browser's default checkbox */
+  /* But place it on top of the customCheckbox so that we can check it on and off */
+  .container .defaultCheckbox {
+    height: 24px;
+    width: 24px;
+  }
+
+  /* Create a custom checkbox */
+  .customCheckbox {
+    height: 24px;
+    width: 24px;
+  }
+
+  /* On mouse-over, add a gradient background color */
+  .defaultCheckbox:hover ~ .borderWrap {
+    padding: 12px;
+  }
+
+  /* Style the checkmark/indicator */
+  .container .customCheckbox:after {
+    top: 8px;
+    left: 7px;
+    height: 9px;
+    width: 11px;
+  }
 }

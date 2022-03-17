@@ -1,4 +1,5 @@
 import TodoListItem from "./TodoListItem"
+import FilterTodosDesktop from "./FilterTodosDesktop"
 import styles from "../styles/TodoList.module.css"
 
 export default function TodoList() {
@@ -14,6 +15,7 @@ export default function TodoList() {
       </ul>
       <div className={styles.bottom}>
         <p className={styles.itemLeft}>5 items left</p>
+        <FilterTodosDesktop />
         <p className={styles.clearCompleted}>Clear Completed</p>
       </div>
     </section>
