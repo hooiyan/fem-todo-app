@@ -5,7 +5,7 @@ import FilterTodosMobile from "./components/FilterTodosMobile"
 import Information from "./components/Information"
 import styles from "./styles/App.module.css"
 
-function App() {
+export default function App() {
   return (
     <div className={styles.app}>
       <div className={styles.wrapper}>
@@ -20,5 +20,3 @@ function App() {
     </div>
   )
 }
-
-export default App
