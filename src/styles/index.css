@@ -10,6 +10,7 @@
   /* Primary colors */
   --primary-bright-blue: hsl(220, 98%, 61%);
   --checked-background: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+  --white: hsl(0, 0%, 100%);
 
   /* Light theme colors */
   --lt-very-light-gray: hsl(0, 0%, 98%);
@@ -32,15 +33,26 @@
   --font-weight-regular: 400;
   --font-weight-bold: 700;
   --font-size-default: 1.8rem;
+
+  /* Others */
+  --border-radius: 5px;
+  --box-shadow: 0px 35px 50px -15px rgba(194, 195, 214, 0.5);
 }
 
 html {
   font-size: 62.5%;
+  height: 100%;
 }
 
 body {
   font-family: var(--font-family);
-  font-size: var(--font-size-default);
+  /* font-size: var(--font-size-default); */
+  font-size: 1.6rem;
+  height: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  height: 100%;
 }
