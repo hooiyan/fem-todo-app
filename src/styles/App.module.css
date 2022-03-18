@@ -1,33 +1,6 @@
-.app {
-  background-image: url("../images/bg-mobile-light.jpg");
-  background-size: 100% 200px;
-  background-repeat: no-repeat;
-  height: 100%;
-  padding: 48px 24px;
-}
-
-@media only screen and (min-width: 376px) {
-  .app {
-    background-image: url("../images/bg-desktop-light.jpg");
-  }
-}
-
-@media only screen and (min-width: 460px) {
-  .app {
-    padding: 48px;
-  }
-}
-
 @media only screen and (min-width: 636px) {
   .wrapper {
     margin: 0 auto;
     width: 540px;
-  }
-}
-
-@media only screen and (min-width: 990px) {
-  .app {
-    background-size: 100% 300px;
-    padding: 70px 48px;
   }
 }

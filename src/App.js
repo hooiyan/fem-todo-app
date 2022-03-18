@@ -7,16 +7,14 @@ import styles from "./styles/App.module.css"
 
 export default function App() {
   return (
-    <div className={styles.app}>
-      <div className={styles.wrapper}>
-        <AppHeader />
-        <main>
-          <AddTodo />
-          <TodoList />
-          <FilterTodosMobile />
-        </main>
-        <Information />
-      </div>
+    <div className={styles.wrapper}>
+      <AppHeader />
+      <main>
+        <AddTodo />
+        <TodoList />
+        <FilterTodosMobile />
+      </main>
+      <Information />
     </div>
   )
 }
