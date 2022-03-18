@@ -1,13 +1,17 @@
 import Checkbox from "./Checkbox"
-import styles from "../styles/TodoListItem.module.css"
+import {
+  StyledTodoListItem,
+  StyledTodoContent,
+  StyledCrossIcon,
+} from "../styles/StyledTodoListItem"
 import IconCross from "../images/icon-cross.svg"
 
 export default function TodoListItem({ todo, isChecked, isDeleted }) {
   return (
-    <li className={styles.todoListItem}>
+    <StyledTodoListItem>
       <Checkbox />
-      <span className={styles.todoContent}>{todo}</span>
-      <img className={styles.crossIcon} src={IconCross} alt="cross icon" />
-    </li>
+      <StyledTodoContent>{todo}</StyledTodoContent>
+      <StyledCrossIcon src={IconCross} alt="cross icon" />
+    </StyledTodoListItem>
   )
 }

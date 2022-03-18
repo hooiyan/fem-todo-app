@@ -3,11 +3,11 @@ import AddTodo from "./components/AddTodo"
 import TodoList from "./components/TodoList"
 import FilterTodosMobile from "./components/FilterTodosMobile"
 import Information from "./components/Information"
-import styles from "./styles/App.module.css"
+import { StyledWrapper } from "./styles/StyledApp"
 
 export default function App() {
   return (
-    <div className={styles.wrapper}>
+    <StyledWrapper>
       <AppHeader />
       <main>
         <AddTodo />
@@ -15,6 +15,6 @@ export default function App() {
         <FilterTodosMobile />
       </main>
       <Information />
-    </div>
+    </StyledWrapper>
   )
 }

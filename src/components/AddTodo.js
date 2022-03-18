@@ -1,13 +1,17 @@
-import styles from "../styles/AddTodo.module.css"
+import { StyledForm } from "../styles/StyledAddTodo"
 
 export default function AddTodo() {
   return (
-    <form className={styles.form}>
-      <div className={styles.container}>
-        <input className={styles.defaultCheckbox} type="checkbox" checked="checked" />
-        <span className={styles.customCheckbox}></span>
+    <StyledForm>
+      <div className="container">
+        <input className="defaultCheckbox" type="checkbox" checked="checked" />
+        <span className="customCheckbox"></span>
       </div>
-      <input className={styles.textbox} type="text" placeholder="Create a new todo..." />
-    </form>
+      <input
+        className="textbox"
+        type="text"
+        placeholder="Create a new todo..."
+      />
+    </StyledForm>
   )
 }

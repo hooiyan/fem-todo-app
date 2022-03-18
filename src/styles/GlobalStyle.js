@@ -1,5 +1,8 @@
-@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap");
+import { createGlobalStyle } from "styled-components"
+import MobileLight from "../images/bg-mobile-light.jpg"
+import DesktopLight from "../images/bg-desktop-light.jpg"
 
+const GlobalStyle = createGlobalStyle`
 *,
 *::before,
 *::after {
@@ -33,6 +36,8 @@
   --dt-very-dark-grayish-blue: hsl(233, 14%, 35%);
   --dt-very-dark-grayish-blue-2: hsl(237, 14%, 26%);
 
+  --dt-todolist-bottom: hsl(235, 16%, 43%);
+
   /* Typography */
   --font-family: "Josefin Sans", sans-serif;
   --font-weight-regular: 400;
@@ -54,7 +59,6 @@ html {
 
 body {
   font-family: var(--font-family);
-  /* font-size: var(--font-size-default); */
   font-size: 1.6rem;
   height: 100%;
   margin: 0 auto;
@@ -63,8 +67,7 @@ body {
 }
 
 #root {
-  /* Migrated from App.module.css */
-  background-image: url("../images/bg-mobile-light.jpg");
+  background-image: url(${MobileLight});
   background-size: 100% 200px;
   background-repeat: no-repeat;
   height: 100%;
@@ -73,7 +76,7 @@ body {
 
 @media only screen and (min-width: 376px) {
   #root {
-    background-image: url("../images/bg-desktop-light.jpg");
+    background-image: url(${DesktopLight});
   }
 }
 
@@ -89,3 +92,6 @@ body {
     padding: 70px 48px;
   }
 }
+`
+
+export default GlobalStyle

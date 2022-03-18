@@ -1,7 +1,5 @@
-import styles from "../styles/Information.module.css"
+import { StyledInformation } from "../styles/StyledInformation"
 
 export default function Information() {
-  return (
-    <aside className={styles.text}>Drag and drop to reorder list</aside>
-  )
+  return <StyledInformation>Drag and drop to reorder list</StyledInformation>
 }
