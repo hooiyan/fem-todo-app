@@ -1,6 +1,4 @@
 import { createGlobalStyle } from "styled-components"
-import MobileLight from "../images/bg-mobile-light.jpg"
-import DesktopLight from "../images/bg-desktop-light.jpg"
 
 const GlobalStyle = createGlobalStyle`
 *,
@@ -9,6 +7,7 @@ const GlobalStyle = createGlobalStyle`
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  transition: all 0.3s;
 }
 
 :root {
@@ -37,6 +36,7 @@ const GlobalStyle = createGlobalStyle`
   --dt-very-dark-grayish-blue-2: hsl(237, 14%, 26%);
 
   --dt-todolist-bottom: hsl(235, 16%, 43%);
+  --border-bottom-color: hsl(237, 14%, 26%);
 
   /* Typography */
   --font-family: "Josefin Sans", sans-serif;
@@ -46,7 +46,8 @@ const GlobalStyle = createGlobalStyle`
 
   /* Others */
   --border-radius: 5px;
-  --box-shadow: 0px 35px 50px -15px rgba(194, 195, 214, 0.5);
+  --lt-box-shadow: 0px 35px 50px -15px rgba(194, 195, 214, 0.5);
+  --dt-box-shadow: 0px 35px 50px -15px rgba(0, 0, 0, 0.5);
   --small-left-padding: 52px;
   --larger-left-padding: 62px;
   --largest-left-padding: 72px;
@@ -58,6 +59,7 @@ html {
 }
 
 body {
+  background-color: ${(props) => props.theme.appBackground};
   font-family: var(--font-family);
   font-size: 1.6rem;
   height: 100%;
@@ -67,7 +69,7 @@ body {
 }
 
 #root {
-  background-image: url(${MobileLight});
+  background-image: ${(props) => `url(${props.theme.heroMobile})`};
   background-size: 100% 200px;
   background-repeat: no-repeat;
   height: 100%;
@@ -76,7 +78,7 @@ body {
 
 @media only screen and (min-width: 376px) {
   #root {
-    background-image: url(${DesktopLight});
+    background-image: ${(props) => `url(${props.theme.heroDesktop})`};
   }
 }
 

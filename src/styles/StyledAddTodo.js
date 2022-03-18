@@ -4,6 +4,7 @@ export const StyledForm = styled.form`
   position: relative;
 
   .container {
+    background: ${(props) => props.theme.inputBackground};
     cursor: pointer;
     display: block;
     position: absolute;
@@ -22,8 +23,7 @@ export const StyledForm = styled.form`
 
   /* Create a cusom checkbox */
   .customCheckbox {
-    background-color: var(--white);
-    border: 1px solid var(--dt-light-grayish-blue-hover);
+    border: 1px solid ${(props) => props.theme.circle};
     border-radius: 50%;
     position: absolute;
     top: 0;
@@ -45,8 +45,10 @@ export const StyledForm = styled.form`
   }
 
   .textbox {
+    background-color: ${props => props.theme.inputBackground};
     border: none;
     border-radius: var(--border-radius);
+    color: ${(props) => props.theme.inputText};
     caret-color: var(--primary-bright-blue);
     font-family: var(--font-family);
     margin-top: 40px;
@@ -56,7 +58,7 @@ export const StyledForm = styled.form`
   }
 
   .textbox::placeholder {
-    color: var(--lt-dark-grayish-blue);
+    color: ${(props) => props.theme.placeholderText};
     font-size: 1.2rem;
     letter-spacing: -0.17px;
   }

@@ -1,15 +1,18 @@
-import IconMoon from "../images/icon-moon.svg"
 import {
   StyledHeader,
   StyledTodoText,
   StyledThemeToggler,
 } from "../styles/StyledAppHeader"
 
-export default function AppHeader() {
+export default function AppHeader({ toggleTheme, icon }) {
   return (
     <StyledHeader>
       <StyledTodoText>Todo</StyledTodoText>
-      <StyledThemeToggler src={IconMoon} alt="toggle theme color" />
+      <StyledThemeToggler
+        onClick={toggleTheme}
+        src={icon}
+        alt="toggle theme color"
+      />
     </StyledHeader>
   )
 }

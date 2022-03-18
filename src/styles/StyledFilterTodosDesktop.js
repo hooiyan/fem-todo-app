@@ -6,7 +6,7 @@ export const StyledFilterTodoDesktop = styled.section`
   @media only screen and (min-width: 600px) {
     display: flex;
     justify-content: space-between;
-    color: var(--lt-dark-grayish-blue);
+    color: ${(props) => props.theme.todolistBottom};
     font-size: 1.2rem;
     font-weight: var(--font-weight-bold);
     width: 166px;
@@ -25,6 +25,6 @@ export const StyledFilterTodoDesktop = styled.section`
   }
 
   .option:hover {
-    color: var(--lt-very-dark-grayish-blue);
+    color: ${(props) => props.theme.todolistBottomHover};
   }
 `

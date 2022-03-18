@@ -3,13 +3,12 @@ import styled from "styled-components"
 export const StyledFilterTodoMobile = styled.section`
   display: flex;
   justify-content: space-between;
-  color: var(--lt-dark-grayish-blue);
   font-size: 1.4rem;
   font-weight: var(--font-weight-bold);
 
-  background-color: var(--white);
+  background-color: ${(props) => props.theme.todolistBackground};
   border-radius: var(--border-radius);
-  box-shadow: var(--box-shadow);
+  box-shadow: ${(props) => props.theme.boxShadow};
   margin-top: 16px;
   padding: 15px 30px;
 
@@ -26,15 +25,17 @@ export const StyledFilterTodoMobile = styled.section`
     font-size: 1.4rem;
   }
 
+  .option {
+    color: ${(props) => props.theme.todolistBottom};
+    cursor: pointer;
+  }
+  
   .selected {
     color: var(--primary-bright-blue);
   }
 
-  .option {
-    cursor: pointer;
-  }
 
   .option:hover {
-    color: var(--lt-very-dark-grayish-blue);
+    color: ${(props) => props.theme.todolistBottomHover};
   }
 `

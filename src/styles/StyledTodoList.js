@@ -6,23 +6,24 @@ export const StyledTodoListWrapper = styled.section`
 `
 
 export const StyledTodoList = styled.ul`
-  background-color: var(--white);
-  border-radius: var(--border-radius);
+  background-color: ${(props) => props.theme.todolistBackground};
+  border-top-left-radius: var(--border-radius);
+  border-top-right-radius: var(--border-radius);
 `
 
 export const StyledBottom = styled.div`
   display: flex;
   justify-content: space-between;
-  background-color: var(--white);
+  background-color: ${(props) => props.theme.todolistBackground};
   border-bottom-left-radius: var(--border-radius);
   border-bottom-right-radius: var(--border-radius);
-  color: var(--lt-dark-grayish-blue);
+  color: ${(props) => props.theme.todolistBottom};
   font-size: 1.2rem;
   letter-spacing: -0.17px;
   padding: 16px 20px 20px 20px;
 
   .clearCompleted:hover {
-    color: var(--lt-very-dark-grayish-blue);
+    color: ${(props) => props.theme.todolistBottomHover};
     cursor: pointer;
   }
 

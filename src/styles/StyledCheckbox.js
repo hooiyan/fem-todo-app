@@ -2,6 +2,7 @@ import styled from "styled-components"
 import IconCheck from "../images/icon-check.svg"
 
 export const StyledCheckbox = styled.div`
+  background-color: ${(props) => props.theme.inputBackground};
   cursor: pointer;
   display: block;
   position: absolute;
@@ -24,8 +25,8 @@ export const StyledCheckbox = styled.div`
   /* Create a custom checkbox */
   /* It worked, don't change it */
   .customCheckbox {
-    background-color: var(--white);
-    border: 1px solid var(--dt-light-grayish-blue-hover);
+    background: ${(props) => props.theme.inputBackground};
+    border: 1px solid ${(props) => props.theme.circle};
     border-radius: 50%;
     position: absolute;
     top: 0;

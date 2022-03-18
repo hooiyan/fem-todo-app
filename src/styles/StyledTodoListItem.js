@@ -1,8 +1,8 @@
 import styled from "styled-components"
 
 export const StyledTodoListItem = styled.li`
-  border-bottom: 1px solid var(--lt-very-light-grayish-blue);
-  color: var(--lt-very-dark-grayish-blue);
+  border-bottom: 1px solid ${props => props.theme.borderBottom};
+  color: ${props => props.theme.todolistText};
   cursor: pointer;
   font-size: 1.2rem;
   list-style: none;
