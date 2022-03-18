@@ -1,4 +1,4 @@
-import { useContext, useState } from "react"
+import { useState } from "react"
 import { ThemeProvider } from "styled-components"
 import AppHeader from "./components/AppHeader"
 import AddTodo from "./components/AddTodo"
