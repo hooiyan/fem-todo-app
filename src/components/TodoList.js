@@ -10,7 +10,7 @@ export default function TodoList() {
   return (
     <StyledTodoListWrapper>
       <StyledTodoList>
-        <TodoListItem todo="Complete online JavaScript course" />
+        <TodoListItem defaultChecked todo="Complete online JavaScript course" />
         <TodoListItem todo="Jog around the park 3x" />
         <TodoListItem todo="10 minutes meditation" />
         <TodoListItem todo="Read for 1 hour" />
@@ -20,7 +20,7 @@ export default function TodoList() {
       <StyledBottom>
         <p className="itemLeft">5 items left</p>
         <FilterTodosDesktop />
-        <p className="clearCompleted">Clear Completed</p>
+        <button className="clearCompleted">Clear Completed</button>
       </StyledBottom>
     </StyledTodoListWrapper>
   )

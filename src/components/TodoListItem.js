@@ -1,3 +1,4 @@
+import { useState } from "react"
 import Checkbox from "./Checkbox"
 import {
   StyledTodoListItem,
@@ -6,12 +7,37 @@ import {
 } from "../styles/StyledTodoListItem"
 import IconCross from "../images/icon-cross.svg"
 
-export default function TodoListItem({ todo, isChecked, isDeleted }) {
+export default function TodoListItem({
+  todo,
+  defaultChecked,
+  isChecked,
+  isDeleted,
+}) {
+  let [isCheckedState, setIsChecked] = useState(false)
+
+  const checkTodo = () => {
+    console.log("Checked")
+    setIsChecked(!isCheckedState)
+  }
+
+  const deleteTodo = () => {
+    console.log("Deleted")
+  }
+
   return (
     <StyledTodoListItem>
-      <Checkbox />
-      <StyledTodoContent>{todo}</StyledTodoContent>
-      <StyledCrossIcon src={IconCross} alt="cross icon" />
+      <Checkbox
+        checkTodo={checkTodo}
+        defaultChecked={defaultChecked}
+        // isChecked={isCheckedState}
+      />
+      <StyledTodoContent isChecked={isCheckedState}>{todo}</StyledTodoContent>
+      <StyledCrossIcon
+        onClick={deleteTodo}
+        isDeleted={isDeleted}
+        src={IconCross}
+        alt="cross icon"
+      />
     </StyledTodoListItem>
   )
 }

@@ -27,6 +27,7 @@ export const StyledFilterTodoMobile = styled.section`
 
   .option {
     color: ${(props) => props.theme.todolistBottom};
+    font-weight: var(--font-weight-bold);
     cursor: pointer;
   }
   

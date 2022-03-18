@@ -22,6 +22,10 @@ export const StyledBottom = styled.div`
   letter-spacing: -0.17px;
   padding: 16px 20px 20px 20px;
 
+  .clearCompleted {
+    font-size: 1.2rem;
+  }
+
   .clearCompleted:hover {
     color: ${(props) => props.theme.todolistBottomHover};
     cursor: pointer;
@@ -34,5 +38,9 @@ export const StyledBottom = styled.div`
   @media only screen and (min-width: 990px) {
     font-size: 1.4rem;
     letter-spacing: -0.19px;
+
+    .clearCompleted {
+      font-size: 1.4rem;
+    }
   }
 `

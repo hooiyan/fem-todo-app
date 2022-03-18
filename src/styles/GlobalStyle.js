@@ -69,6 +69,13 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+button {
+  background-color: transparent;
+  border: none;
+  color: ${(props) => props.theme.todolistBottom};
+  font-family: var(--font-family);
+}
+
 #root {
   background-image: ${(props) => `url(${props.theme.heroMobile})`};
   background-size: 100% 200px;
