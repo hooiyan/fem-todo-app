@@ -7,7 +7,7 @@ const GlobalStyle = createGlobalStyle`
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  transition-property: color, background, border, border-bottom;
+  transition-property: color, background, background-image, border, border-bottom;
   transition-duration: 0.3s;
 }
 
