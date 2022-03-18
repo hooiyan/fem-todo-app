@@ -34,9 +34,9 @@
 @media only screen and (min-width: 990px) {
   .todoListItem {
     font-size: 1.8rem;
-    padding: 21px 24px 21px 62px;
+    padding: 23px 24px 23px var(--largest-left-padding);
   }
-  
+
   .crossIcon {
     height: 18px;
     width: 18px;

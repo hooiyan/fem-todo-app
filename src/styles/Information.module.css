@@ -1,6 +1,8 @@
 .text {
   color: var(--lt-dark-grayish-blue);
   font-size: 1.4rem;
-  margin: 40px 0 72px;
+  letter-spacing: -0.19px;
+  padding-bottom: 40px;
+  margin: 40px 0 0;
   text-align: center;
 }

@@ -79,6 +79,10 @@
 }
 
 @media only screen and (min-width: 990px) {
+  .container {
+    top: 19px;
+  }
+
   /* Hide the browser's default checkbox */
   /* But place it on top of the customCheckbox so that we can check it on and off */
   .container .defaultCheckbox {

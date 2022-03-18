@@ -93,7 +93,7 @@
 @media only screen and (min-width: 990px) {
   /* TODO: Adjust the bottom and left values */
   .container {
-    bottom: 55%;
+    bottom: 48%;
   }
 
   .customCheckbox {
@@ -103,7 +103,9 @@
 
   .textbox {
     font-size: 1.8rem;
+    margin-top: 58px;
     margin-bottom: 24px;
+    padding: 23px 24px 23px var(--largest-left-padding);
   }
 
   .textbox::placeholder {
