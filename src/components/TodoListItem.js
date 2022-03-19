@@ -14,12 +14,13 @@ export default function TodoListItem({ todo, isChecked, isDeleted }) {
     setIsCheckedState(!isCheckedState)
   }
 
-  const deleteTodo = () => {
+  const deleteTodo = (e) => {
     console.log("Deleted")
+    console.log(e.target.parentNode)
   }
 
   return (
-    <StyledTodoListItem isChecked={isChecked}>
+    <StyledTodoListItem>
       <Checkbox checkTodo={checkTodo} isChecked={isChecked} />
       {/* If a todo item is checked by default, apply the checked styles. The checked styles should be controlled by isCheckedState */}
       <StyledTodoContent isChecked={isCheckedState}>{todo}</StyledTodoContent>
