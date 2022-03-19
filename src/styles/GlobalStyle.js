@@ -76,6 +76,11 @@ button {
   font-family: var(--font-family);
 }
 
+.checked {
+  color: var(--lt-light-grayish-blue);
+  text-decoration: line-through;
+}
+
 #root {
   background-image: ${(props) => `url(${props.theme.heroMobile})`};
   background-size: 100% 200px;

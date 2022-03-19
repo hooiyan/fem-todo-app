@@ -4,7 +4,11 @@ export default function AddTodo() {
   return (
     <StyledForm>
       <div className="container">
-        <input className="defaultCheckbox" type="checkbox" checked="checked" />
+        <input
+          className="defaultCheckbox"
+          type="checkbox"
+          defaultChecked={false}
+        />
         <span className="customCheckbox"></span>
       </div>
       <input

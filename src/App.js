@@ -16,7 +16,7 @@ import { themes } from "./context/themeContext"
 export default function App() {
   const { light, dark } = themes
 
-  const [isLightMode, setTheme] = useState(true)
+  const [isLightMode, setTheme] = useState(false)
   const toggleTheme = () => {
     setTheme(!isLightMode)
   }

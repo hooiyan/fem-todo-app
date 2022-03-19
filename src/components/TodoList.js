@@ -10,7 +10,7 @@ export default function TodoList() {
   return (
     <StyledTodoListWrapper>
       <StyledTodoList>
-        <TodoListItem defaultChecked todo="Complete online JavaScript course" />
+        <TodoListItem isChecked todo="Complete online JavaScript course" />
         <TodoListItem todo="Jog around the park 3x" />
         <TodoListItem todo="10 minutes meditation" />
         <TodoListItem todo="Read for 1 hour" />
