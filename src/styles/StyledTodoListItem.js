@@ -24,18 +24,10 @@ export const StyledTodoListItem = styled.li`
 `
 
 export const StyledTodoContent = styled.span`
-  margin-right: 12px;
-
-  /* TODO */
-  /* After the user checks the complete button */
-  /* color: var(--lt-light-grayish-blue);
-    text-decoration: line-through; */
   color: ${(props) =>
-    props.isChecked || props.defaultChecked
-      ? "var(--lt-light-grayish-blue)"
-      : null};
-  text-decoration: ${(props) =>
-    props.isChecked || props.defaultChecked ? "line-through" : null};
+    props.isChecked ? props.theme.todolistTextLineThrough : null};
+  margin-right: 12px;
+  text-decoration: ${(props) => (props.isChecked ? "line-through" : null)};
 `
 
 export const StyledCrossIcon = styled.img`
