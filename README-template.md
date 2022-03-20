@@ -70,8 +70,8 @@ Use this section to outline areas that you want to continue focusing on in futur
 - https://jscircle.com/react-theme-switching-with-context-api-and-styled-components/
 - https://simplernerd.com/js-delete-element-from-state-array-by-index/
 - https://medium.com/bigpanda-engineering/dark-theme-with-styled-components-a573dd898e2a
-- https://www.jonathan-harrell.com/blog/
-- https://codesandbox.io/s/dark-mode-styled-components-hfgp7?file=/src/App.jssystem-based-theming-with-styled-components/
+- https://www.jonathan-harrell.com/blog/system-based-theming-with-styled-components/
+- https://codesandbox.io/s/dark-mode-styled-components-hfgp7?file=/src/App.js
 
 ## Author
 
