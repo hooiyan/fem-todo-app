@@ -8,7 +8,8 @@ const GlobalStyle = createGlobalStyle`
   margin: 0;
   padding: 0;
   transition-property: color, background, background-image, border, border-bottom;
-  transition-duration: 0.3s;
+  transition-duration: 0.25s;
+  transition-timing-function: linear;
 }
 
 :root {
