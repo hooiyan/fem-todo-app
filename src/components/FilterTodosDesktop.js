@@ -1,11 +1,21 @@
 import { StyledFilterTodoDesktop } from "../styles/StyledFilterTodosDesktop"
 
-export default function FilterTodosDesktop() {
+export default function FilterTodosDesktop({
+  showAll,
+  showActive,
+  showCompleted,
+}) {
   return (
     <StyledFilterTodoDesktop>
-      <button className="all option selected">All</button>
-      <button className="active option">Active</button>
-      <button className="completed option">Completed</button>
+      <button onClick={showAll} className="all option selected">
+        All
+      </button>
+      <button onClick={showActive} className="active option">
+        Active
+      </button>
+      <button onClick={showCompleted} className="completed option">
+        Completed
+      </button>
     </StyledFilterTodoDesktop>
   )
 }

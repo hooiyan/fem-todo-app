@@ -68,6 +68,10 @@ Use this section to outline areas that you want to continue focusing on in futur
 - [Create custom checkboxes](https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_custom_checkbox) - This has helped me in creating custom checkboxed that are used in the project.
 - [Gradient borders in CSS](https://css-tricks.com/gradient-borders-in-css/)
 - https://jscircle.com/react-theme-switching-with-context-api-and-styled-components/
+- https://simplernerd.com/js-delete-element-from-state-array-by-index/
+- https://medium.com/bigpanda-engineering/dark-theme-with-styled-components-a573dd898e2a
+- https://www.jonathan-harrell.com/blog/
+- https://codesandbox.io/s/dark-mode-styled-components-hfgp7?file=/src/App.jssystem-based-theming-with-styled-components/
 
 ## Author
 
