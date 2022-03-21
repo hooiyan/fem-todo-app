@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { RecoilRoot } from "recoil"
 import { ThemeProvider } from "styled-components"
 import AppHeader from "./components/AppHeader"
 import AddTodo from "./components/AddTodo"
@@ -50,24 +51,26 @@ export default function App() {
   }
 
   return (
-    <ThemeProvider theme={isDarkTheme ? dark : light}>
-      <GlobalStyle />
-      <StyledWrapper>
-        <AppHeader
-          toggleTheme={toggleTheme}
-          icon={isDarkTheme ? IconSun : IconMoon}
-        />
-        <main>
-          <AddTodo />
-          <TodoList />
-          <FilterTodosMobile
-            showAll={showAll}
-            showActive={showActive}
-            showCompleted={showCompleted}
+    <RecoilRoot>
+      <ThemeProvider theme={isDarkTheme ? dark : light}>
+        <GlobalStyle />
+        <StyledWrapper>
+          <AppHeader
+            toggleTheme={toggleTheme}
+            icon={isDarkTheme ? IconSun : IconMoon}
           />
-        </main>
-        <Information />
-      </StyledWrapper>
-    </ThemeProvider>
+          <main>
+            <AddTodo />
+            <TodoList />
+            <FilterTodosMobile
+              showAll={showAll}
+              showActive={showActive}
+              showCompleted={showCompleted}
+            />
+          </main>
+          <Information />
+        </StyledWrapper>
+      </ThemeProvider>
+    </RecoilRoot>
   )
 }

@@ -1,4 +1,5 @@
-import { useState } from "react"
+import { useRecoilState } from "recoil"
+import { todoListState } from "../recoil/todoListState"
 import TodoListItem from "./TodoListItem"
 import FilterTodosDesktop from "./FilterTodosDesktop"
 import {
@@ -8,49 +9,35 @@ import {
 } from "../styles/StyledTodoList"
 
 export default function TodoList() {
-  const [todos, setTodos] = useState([
-    {
-      text: "Complete online JavaScript course",
-      isChecked: true,
-      isDeleted: false,
-    },
-    {
-      text: "Jog around the park 3x",
-      isChecked: false,
-      isDeleted: false,
-    },
-    {
-      text: "10 minutes meditation",
-      isChecked: true,
-      isDeleted: false,
-    },
-    {
-      text: "Read for 1 hour",
-      isChecked: false,
-      isDeleted: false,
-    },
-    {
-      text: "Pick up groceries",
-      isChecked: false,
-      isDeleted: false,
-    },
-    {
-      text: "Complete Todo App on Frontend Mentor",
-      isChecked: false,
-      isDeleted: false,
-    },
-  ])
+  const [todos, setTodos] = useRecoilState(todoListState)
 
-  const completedTodos = todos.filter((todo) => todo.isChecked)
+  // const completedTodos = todos.filter((todo) => todo.isChecked)
   const incompleteTodos = todos.filter((todo) => !todo.isChecked)
 
-  // TODO: Something's wrong here, the incomplete todos will get the styling applied to them.
-  const deleteTodo = (index) => {
+  const checkTodo = (index) => {
     setTodos([
       ...todos.slice(0, index),
+      {
+        text: todos[index].text,
+        isChecked: !todos[index].isChecked,
+        isDeleted: todos[index].isDeleted,
+      },
       ...todos.slice(index + 1, todos.length),
     ])
   }
+
+  const deleteTodo = (index) => {
+    setTodos([
+      ...todos.slice(0, index),
+      {
+        text: todos[index].text,
+        isChecked: todos[index].isChecked,
+        isDeleted: !todos[index].isDeleted,
+      },
+      ...todos.slice(index + 1, todos.length),
+    ])
+  }
+  console.log(todos)
 
   const clearCompleted = () => {
     setTodos(incompleteTodos)
@@ -78,6 +65,7 @@ export default function TodoList() {
                 key={index}
                 todo={todo.text}
                 isChecked={todo.isChecked}
+                checkTodo={() => checkTodo(index)}
                 deleteTodo={() => deleteTodo(index)}
               />
             )

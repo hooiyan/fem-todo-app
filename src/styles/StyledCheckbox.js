@@ -22,8 +22,6 @@ export const StyledCheckbox = styled.div`
     z-index: 999;
   }
 
-  /* Create a custom checkbox */
-  /* It worked, don't change it */
   .customCheckbox {
     background: ${(props) => props.theme.inputBackground};
     border: 1px solid ${(props) => props.theme.circle};
@@ -36,7 +34,7 @@ export const StyledCheckbox = styled.div`
   }
 
   /* On mouse-over, add a gradient background color */
-  .defaultCheckbox:hover ~ .borderWrap {
+  .defaultCheckbox:hover ~ .border {
     background: var(--checked-background);
     border-radius: 50%;
     padding: 10px;
@@ -44,34 +42,28 @@ export const StyledCheckbox = styled.div`
   }
 
   /* When the checkbox is checked, add a gradient background */
-  /* It worked, don't change it */
-  & .defaultCheckbox:checked ~ .borderWrap .customCheckbox {
+  .defaultCheckbox:checked ~ .border .customCheckbox {
     background-image: var(--checked-background);
+    background-image: ${(props) =>
+      props.isChecked ? `var(--checked-background)` : null};
     border: none;
   }
 
-  /* Create the checkmark/indicator (hidden when not checked) */
-  /* It worked, don't change it */
+  /* Style the checkmark/indicator */
   .customCheckbox:after {
     content: "";
     display: none;
     position: absolute;
-  }
-
-  /* Show the checkmark when checked */
-  /* It worked, don't change it */
-  .defaultCheckbox:checked ~ .borderWrap .customCheckbox:after {
-    display: block;
-  }
-
-  /* Style the checkmark/indicator */
-  /* It worked, don't change it */
-  .customCheckbox:after {
     background-image: url(${IconCheck});
     top: 6px;
     left: 5px;
     height: 9px;
     width: 11px;
+  }
+
+  /* Show the checkmark when checked */
+  .defaultCheckbox:checked ~ .border .customCheckbox:after {
+    display: block;
   }
 
   @media only screen and (min-width: 600px) {
@@ -82,25 +74,16 @@ export const StyledCheckbox = styled.div`
   @media only screen and (min-width: 990px) {
     top: 19px;
 
-    /* Hide the browser's default checkbox */
-    /* But place it on top of the customCheckbox so that we can check it on and off */
-    .defaultCheckbox {
-      height: 24px;
-      width: 24px;
-    }
-
-    /* Create a custom checkbox */
+    .defaultCheckbox,
     .customCheckbox {
       height: 24px;
       width: 24px;
     }
 
-    /* On mouse-over, add a gradient background color */
-    .defaultCheckbox:hover ~ .borderWrap {
+    .defaultCheckbox:hover ~ .border {
       padding: 12px;
     }
 
-    /* Style the checkmark/indicator */
     .customCheckbox:after {
       top: 8px;
       left: 7px;

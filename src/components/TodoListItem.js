@@ -7,18 +7,17 @@ import {
 } from "../styles/StyledTodoListItem"
 import IconCross from "../images/icon-cross.svg"
 
-export default function TodoListItem({ todo, isChecked, deleteTodo }) {
-  const [isCheckedState, setIsCheckedState] = useState(isChecked)
-
-  const checkTodo = () => {
-    setIsCheckedState(!isCheckedState)
-  }
-
+export default function TodoListItem({
+  todo,
+  isChecked,
+  checkTodo,
+  deleteTodo,
+}) {
   return (
     <StyledTodoListItem>
       <Checkbox checkTodo={checkTodo} isChecked={isChecked} />
       {/* If a todo item is checked by default, apply the checked styles. The checked styles should be controlled by isCheckedState */}
-      <StyledTodoContent isChecked={isCheckedState}>{todo}</StyledTodoContent>
+      <StyledTodoContent isChecked={isChecked}>{todo}</StyledTodoContent>
       <StyledCrossIcon onClick={deleteTodo} src={IconCross} alt="cross icon" />
     </StyledTodoListItem>
   )
