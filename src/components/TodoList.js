@@ -31,13 +31,13 @@ export default function TodoList() {
       ...todos.slice(0, index),
       {
         text: todos[index].text,
-        isChecked: todos[index].isChecked,
+        isChecked:
+          todos[index].isChecked === true ? true : !todos[index].isChecked,
         isDeleted: !todos[index].isDeleted,
       },
       ...todos.slice(index + 1, todos.length),
     ])
   }
-  console.log(todos)
 
   const clearCompleted = () => {
     setTodos(incompleteTodos)
