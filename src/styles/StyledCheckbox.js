@@ -44,8 +44,6 @@ export const StyledCheckbox = styled.div`
   /* When the checkbox is checked, add a gradient background */
   .defaultCheckbox:checked ~ .border .customCheckbox {
     background-image: var(--checked-background);
-    background-image: ${(props) =>
-      props.isChecked ? `var(--checked-background)` : null};
     border: none;
   }
 

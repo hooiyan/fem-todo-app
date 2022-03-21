@@ -1,4 +1,3 @@
-import { useState } from "react"
 import Checkbox from "./Checkbox"
 import {
   StyledTodoListItem,
@@ -16,7 +15,7 @@ export default function TodoListItem({
   return (
     <StyledTodoListItem>
       <Checkbox checkTodo={checkTodo} isChecked={isChecked} />
-      {/* If a todo item is checked by default, apply the checked styles. The checked styles should be controlled by isCheckedState */}
+      {/* If a todo item is checked by default, apply the checked styles. The checked styles should be controlled by isChecked */}
       <StyledTodoContent isChecked={isChecked}>{todo}</StyledTodoContent>
       <StyledCrossIcon onClick={deleteTodo} src={IconCross} alt="cross icon" />
     </StyledTodoListItem>

@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { useRecoilState, useSetRecoilState } from "recoil"
+import { useSetRecoilState } from "recoil"
 import { todoListState } from "../recoil/todoListState"
 import { StyledForm } from "../styles/StyledAddTodo"
 
