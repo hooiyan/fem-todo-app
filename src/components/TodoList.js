@@ -44,14 +44,18 @@ export default function TodoList() {
   }
 
   const showAll = () => {
+    // Show completed & incomplete todos
+    // Basically every todo that is not deleted
     console.log("show all")
   }
 
   const showActive = () => {
+    // Show incomplete todos only
     console.log("show active")
   }
 
   const showCompleted = () => {
+    // Show completed todos only
     console.log("show completed")
   }
 
