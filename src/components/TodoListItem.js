@@ -12,7 +12,7 @@ import IconCross from "../images/icon-cross.svg"
 import { todoListState } from "../recoil/recoilState"
 import { replaceItemAtIndex, removeItemAtIndex } from "../utils"
 
-export default function TodoListItem({ item }) {
+export default function TodoListItem({ item, provided, innerRef }) {
   const [todos, setTodos] = useRecoilState(todoListState)
   const index = todos.findIndex(todo => todo === item)
 
@@ -30,7 +30,10 @@ export default function TodoListItem({ item }) {
   }
 
   return (
-    <StyledTodoListItem>
+    <StyledTodoListItem
+      {...provided.draggableProps}
+      {...provided.dragHandleProps}
+      ref={innerRef}>
       <Checkbox checkTodo={checkTodo} isChecked={item.isChecked} />
       {/* If a todo item is checked by default, apply the checked styles. The checked styles should be controlled by isChecked */}
       <StyledTodoContent isChecked={item.isChecked}>

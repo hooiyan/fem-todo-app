@@ -1,5 +1,5 @@
 import { useRecoilState, useRecoilValue } from "recoil"
-import { todoListFilterState } from "../recoil/recoilState"
+import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd"
 
 import TodoListItem from "./TodoListItem"
 
@@ -10,16 +10,18 @@ import {
   StyledBottom,
 } from "../styles/StyledTodoList"
 
+import { todoListFilterState, todoListState } from "../recoil/recoilState"
 import {
-  filteredTodoListState,
-  todoListStatState,
+  filteredTodoListSelector,
+  todoListStatSelector,
 } from "../recoil/recoilSelector"
 
 export default function TodoList() {
   const [filter, setFilter] = useRecoilState(todoListFilterState)
+  const [todos, setTodos] = useRecoilState(todoListState)
 
-  const todoList = useRecoilValue(filteredTodoListState)
-  const { totalUncompleted } = useRecoilValue(todoListStatState)
+  const todoList = useRecoilValue(filteredTodoListSelector)
+  const { totalUncompleted } = useRecoilValue(todoListStatSelector)
 
   const clearCompleted = () => {
     filter === "All" && setFilter("Clear")
@@ -27,13 +29,47 @@ export default function TodoList() {
 
   const betterWording = totalUncompleted <= 1 ? "item left" : "items left"
 
+  const handleOnDragEnd = result => {
+    if (!result.destination) return
+
+    const items = Array.from(todos)
+    const [reorderedItem] = items.splice(result.source.index, 1)
+    items.splice(result.destination.index, 0, reorderedItem)
+
+    setTodos(items)
+  }
+
   return (
     <StyledTodoListWrapper>
-      <StyledTodoList>
-        {todoList.map(
-          todo => !todo.isDeleted && <TodoListItem key={todo.id} item={todo} />
-        )}
-      </StyledTodoList>
+      <DragDropContext onDragEnd={handleOnDragEnd}>
+        <Droppable droppableId="todos">
+          {provided => (
+            <StyledTodoList
+              {...provided.droppableProps}
+              ref={provided.innerRef}>
+              {todoList.map(
+                (todo, index) =>
+                  !todo.isDeleted && (
+                    <Draggable
+                      key={todo.id}
+                      draggableId={todo.id}
+                      index={index}>
+                      {provided => (
+                        <TodoListItem
+                          item={todo}
+                          innerRef={provided.innerRef}
+                          provided={provided}
+                        />
+                      )}
+                    </Draggable>
+                  )
+              )}
+              {provided.placeholder}
+            </StyledTodoList>
+          )}
+        </Droppable>
+      </DragDropContext>
+
       <StyledBottom>
         <p className="itemLeft">
           {filter === "Completed" ? 0 : totalUncompleted} {betterWording}

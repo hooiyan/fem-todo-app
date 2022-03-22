@@ -72,6 +72,8 @@ Use this section to outline areas that you want to continue focusing on in futur
 - https://medium.com/bigpanda-engineering/dark-theme-with-styled-components-a573dd898e2a
 - https://www.jonathan-harrell.com/blog/system-based-theming-with-styled-components/
 - https://codesandbox.io/s/dark-mode-styled-components-hfgp7?file=/src/App.js
+- https://www.freecodecamp.org/news/how-to-add-drag-and-drop-in-react-with-react-beautiful-dnd/
+- https://codesandbox.io/s/v3p0q71qn5
 
 ## Author
 

@@ -2,7 +2,7 @@ import { selector } from "recoil"
 
 import { todoListState, todoListFilterState } from "./recoilState"
 
-export const filteredTodoListState = selector({
+export const filteredTodoListSelector = selector({
   key: "FilteredTodoList",
   get: ({ get }) => {
     const filter = get(todoListFilterState)
@@ -21,7 +21,7 @@ export const filteredTodoListState = selector({
   },
 })
 
-export const todoListStatState = selector({
+export const todoListStatSelector = selector({
   key: "TodoListStats",
   get: ({ get }) => {
     const todos = get(todoListState)
