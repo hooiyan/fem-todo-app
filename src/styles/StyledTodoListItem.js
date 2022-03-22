@@ -1,6 +1,8 @@
 import styled from "styled-components"
 
 export const StyledTodoListItem = styled.li`
+  display: flex;
+  justify-content: space-between;
   border-bottom: 1px solid ${props => props.theme.borderBottom};
   color: ${props => props.theme.todolistText};
   cursor: pointer;
@@ -8,8 +10,6 @@ export const StyledTodoListItem = styled.li`
   list-style: none;
   padding: 19px 20px 19px var(--small-left-padding);
   position: relative;
-  display: flex;
-  justify-content: space-between;
 
   @media only screen and (min-width: 600px) {
     font-size: 1.4rem;

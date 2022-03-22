@@ -3,12 +3,11 @@ import styled from "styled-components"
 export const StyledFilterTodoMobile = styled.section`
   display: flex;
   justify-content: space-between;
-  font-size: 1.4rem;
-  font-weight: var(--font-weight-bold);
-
   background-color: ${props => props.theme.todolistBackground};
   border-radius: var(--border-radius);
   box-shadow: ${props => props.theme.boxShadow};
+  font-size: 1.4rem;
+  font-weight: var(--font-weight-bold);
   margin-top: 16px;
   padding: 15px 30px;
 
@@ -27,8 +26,8 @@ export const StyledFilterTodoMobile = styled.section`
 
   .option {
     color: ${props => props.theme.todolistBottom};
-    font-weight: var(--font-weight-bold);
     cursor: pointer;
+    font-weight: var(--font-weight-bold);
 
     &:hover {
       color: ${props => props.theme.todolistBottomHover};

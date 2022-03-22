@@ -1,6 +1,8 @@
 import { useRecoilState } from "recoil"
-import { todoListFilterState } from "../recoil/recoilState"
+
 import { StyledFilterTodoDesktop } from "../styles/StyledFilterTodosDesktop"
+
+import { todoListFilterState } from "../recoil/recoilState"
 
 export default function FilterTodosDesktop() {
   // TODO: Find a way to optimize this code to make it reusable in multiple components

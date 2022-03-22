@@ -13,12 +13,12 @@ export const StyledCheckbox = styled.div`
   /* But place it on top of the customCheckbox so that we can check it on and off */
   .defaultCheckbox {
     cursor: pointer;
-    position: absolute;
-    height: 20px;
-    width: 20px;
     opacity: 0;
+    position: absolute;
     top: 0;
     left: 0;
+    height: 20px;
+    width: 20px;
     z-index: 999;
   }
 
@@ -49,10 +49,10 @@ export const StyledCheckbox = styled.div`
 
   /* Style the checkmark/indicator */
   .customCheckbox:after {
+    background-image: url(${IconCheck});
     content: "";
     display: none;
     position: absolute;
-    background-image: url(${IconCheck});
     top: 6px;
     left: 5px;
     height: 9px;

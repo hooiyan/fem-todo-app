@@ -17,8 +17,8 @@ export const StyledFilterTodoDesktop = styled.section`
 
   .option {
     color: ${props => props.theme.todolistBottom};
-    font-weight: var(--font-weight-bold);
     cursor: pointer;
+    font-weight: var(--font-weight-bold);
 
     &:hover {
       color: ${props => props.theme.todolistBottomHover};

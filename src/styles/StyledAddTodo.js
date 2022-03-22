@@ -15,10 +15,10 @@ export const StyledForm = styled.form`
   /* Hide the browser's default checkbox */
   .container .defaultCheckbox {
     cursor: pointer;
+    opacity: 0;
     position: absolute;
     height: 0;
     width: 0;
-    opacity: 0;
   }
 
   /* Create a cusom checkbox */
@@ -80,7 +80,6 @@ export const StyledForm = styled.form`
   }
 
   @media only screen and (min-width: 990px) {
-    /* TODO: Adjust the bottom and left values */
     .container {
       bottom: 48%;
     }

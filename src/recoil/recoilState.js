@@ -19,7 +19,7 @@ export const todoListState = atom({
     {
       id: uuidv4(),
       text: "10 minutes meditation",
-      isChecked: true,
+      isChecked: false,
       isDeleted: false,
     },
     {
