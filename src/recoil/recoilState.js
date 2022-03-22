@@ -1,40 +1,41 @@
 import { atom } from "recoil"
+import { v4 as uuidv4 } from "uuid"
 
 export const todoListState = atom({
   key: "TodoList",
   default: [
     {
-      id: 1,
+      id: uuidv4(),
       text: "Complete online JavaScript course",
       isChecked: true,
       isDeleted: false,
     },
     {
-      id: 2,
+      id: uuidv4(),
       text: "Jog around the park 3x",
       isChecked: false,
       isDeleted: false,
     },
     {
-      id: 3,
+      id: uuidv4(),
       text: "10 minutes meditation",
       isChecked: true,
       isDeleted: false,
     },
     {
-      id: 4,
+      id: uuidv4(),
       text: "Read for 1 hour",
       isChecked: false,
       isDeleted: false,
     },
     {
-      id: 5,
+      id: uuidv4(),
       text: "Pick up groceries",
       isChecked: false,
       isDeleted: false,
     },
     {
-      id: 6,
+      id: uuidv4(),
       text: "Complete Todo App on Frontend Mentor",
       isChecked: false,
       isDeleted: false,

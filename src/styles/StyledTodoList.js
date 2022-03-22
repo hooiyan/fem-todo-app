@@ -6,7 +6,7 @@ export const StyledTodoListWrapper = styled.section`
 `
 
 export const StyledTodoList = styled.ul`
-  background-color: ${(props) => props.theme.todolistBackground};
+  background-color: ${props => props.theme.todolistBackground};
   border-top-left-radius: var(--border-radius);
   border-top-right-radius: var(--border-radius);
 `
@@ -14,10 +14,10 @@ export const StyledTodoList = styled.ul`
 export const StyledBottom = styled.div`
   display: flex;
   justify-content: space-between;
-  background-color: ${(props) => props.theme.todolistBackground};
+  background-color: ${props => props.theme.todolistBackground};
   border-bottom-left-radius: var(--border-radius);
   border-bottom-right-radius: var(--border-radius);
-  color: ${(props) => props.theme.todolistBottom};
+  color: ${props => props.theme.todolistBottom};
   font-size: 1.2rem;
   letter-spacing: -0.17px;
   padding: 16px 20px 20px 20px;
@@ -27,7 +27,7 @@ export const StyledBottom = styled.div`
   }
 
   .clearCompleted:hover {
-    color: ${(props) => props.theme.todolistBottomHover};
+    color: ${props => props.theme.todolistBottomHover};
     cursor: pointer;
   }
 

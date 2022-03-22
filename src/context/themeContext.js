@@ -19,7 +19,7 @@ export const themes = {
     todolistBottomHover: "var(--lt-very-dark-grayish-blue)",
     boxShadow: "var(--lt-box-shadow)",
     todolistBottomMobile: "var(--white)",
-    borderBottom: "var(--dt-light-grayish-blue-hover)"
+    borderBottom: "var(--dt-light-grayish-blue-hover)",
   },
   dark: {
     heroMobile: `${MobileDark}`,
@@ -36,6 +36,6 @@ export const themes = {
     todolistBottomHover: "var(--lt-very-light-grayish-blue)",
     boxShadow: "var(--dt-box-shadow)",
     todolistBottomMobile: "var(--dt-very-dark-desaturated-blue)",
-    borderBottom: "var(--border-bottom-color)"
+    borderBottom: "var(--border-bottom-color)",
   },
 }

@@ -6,9 +6,9 @@ export const StyledFilterTodoMobile = styled.section`
   font-size: 1.4rem;
   font-weight: var(--font-weight-bold);
 
-  background-color: ${(props) => props.theme.todolistBackground};
+  background-color: ${props => props.theme.todolistBackground};
   border-radius: var(--border-radius);
-  box-shadow: ${(props) => props.theme.boxShadow};
+  box-shadow: ${props => props.theme.boxShadow};
   margin-top: 16px;
   padding: 15px 30px;
 
@@ -26,17 +26,16 @@ export const StyledFilterTodoMobile = styled.section`
   }
 
   .option {
-    color: ${(props) => props.theme.todolistBottom};
+    color: ${props => props.theme.todolistBottom};
     font-weight: var(--font-weight-bold);
     cursor: pointer;
+
+    &:hover {
+      color: ${props => props.theme.todolistBottomHover};
+    }
   }
-  
+
   .selected {
     color: var(--primary-bright-blue);
-  }
-
-
-  .option:hover {
-    color: ${(props) => props.theme.todolistBottomHover};
   }
 `

@@ -14,18 +14,18 @@ export const StyledFilterTodoDesktop = styled.section`
   @media only screen and (min-width: 990px) {
     font-size: 1.4rem;
   }
-  
+
   .option {
-    color: ${(props) => props.theme.todolistBottom};
+    color: ${props => props.theme.todolistBottom};
     font-weight: var(--font-weight-bold);
     cursor: pointer;
+
+    &:hover {
+      color: ${props => props.theme.todolistBottomHover};
+    }
   }
 
   .selected {
     color: var(--primary-bright-blue);
-  }
-
-  .option:hover {
-    color: ${(props) => props.theme.todolistBottomHover};
   }
 `

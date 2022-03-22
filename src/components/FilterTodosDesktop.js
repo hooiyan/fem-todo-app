@@ -3,32 +3,44 @@ import { todoListFilterState } from "../recoil/recoilState"
 import { StyledFilterTodoDesktop } from "../styles/StyledFilterTodosDesktop"
 
 export default function FilterTodosDesktop() {
+  // TODO: Find a way to optimize this code to make it reusable in multiple components
   const [filter, setFilter] = useRecoilState(todoListFilterState)
 
   const showAll = () => {
-    filter && setFilter("All")
+    setFilter("All")
   }
 
   const showActive = () => {
-    filter && setFilter("Uncompleted")
+    setFilter("Uncompleted")
   }
 
   const showCompleted = () => {
-    filter && setFilter("Completed")
+    setFilter("Completed")
   }
 
   return (
     <StyledFilterTodoDesktop>
-      <button onClick={showAll} className="all option selected" value="All">
+      <button
+        onClick={showAll}
+        className={`${
+          filter === "All" ? "all option selected" : "all option"
+        }`}>
         All
       </button>
-      <button onClick={showActive} className="active option" value="Active">
+      <button
+        onClick={showActive}
+        className={`${
+          filter === "Uncompleted" ? "active option selected" : "active option"
+        }`}>
         Active
       </button>
       <button
         onClick={showCompleted}
-        className="completed option"
-        value="Completed">
+        className={`${
+          filter === "Completed"
+            ? "completed option selected"
+            : "completed option"
+        }`}>
         Completed
       </button>
     </StyledFilterTodoDesktop>

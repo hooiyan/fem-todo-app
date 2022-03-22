@@ -61,7 +61,7 @@ html {
 }
 
 body {
-  background-color: ${(props) => props.theme.appBackground};
+  background-color: ${props => props.theme.appBackground};
   font-family: var(--font-family);
   font-size: 1.6rem;
   height: 100%;
@@ -73,17 +73,12 @@ body {
 button {
   background-color: transparent;
   border: none;
-  color: ${(props) => props.theme.todolistBottom};
+  color: ${props => props.theme.todolistBottom};
   font-family: var(--font-family);
 }
 
-.checked {
-  color: var(--lt-light-grayish-blue);
-  text-decoration: line-through;
-}
-
 #root {
-  background-image: ${(props) => `url(${props.theme.heroMobile})`};
+  background-image: ${props => `url(${props.theme.heroMobile})`};
   background-size: 100% 200px;
   background-repeat: no-repeat;
   height: 100%;
@@ -92,7 +87,7 @@ button {
 
 @media only screen and (min-width: 376px) {
   #root {
-    background-image: ${(props) => `url(${props.theme.heroDesktop})`};
+    background-image: ${props => `url(${props.theme.heroDesktop})`};
   }
 }
 

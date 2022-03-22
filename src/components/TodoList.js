@@ -1,10 +1,8 @@
 import { useRecoilState, useRecoilValue } from "recoil"
-import { todoListState, todoListFilterState } from "../recoil/recoilState"
-import {
-  filteredTodoListState,
-  todoListStatState,
-} from "../recoil/recoilSelector"
+import { todoListFilterState } from "../recoil/recoilState"
+
 import TodoListItem from "./TodoListItem"
+
 import FilterTodosDesktop from "./FilterTodosDesktop"
 import {
   StyledTodoListWrapper,
@@ -12,66 +10,36 @@ import {
   StyledBottom,
 } from "../styles/StyledTodoList"
 
+import {
+  filteredTodoListState,
+  todoListStatState,
+} from "../recoil/recoilSelector"
+
 export default function TodoList() {
-  const [todos, setTodos] = useRecoilState(todoListState)
-  const todoList = useRecoilValue(filteredTodoListState)
-  const { totalUncompleted } = useRecoilValue(todoListStatState)
   const [filter, setFilter] = useRecoilState(todoListFilterState)
 
-  const checkTodo = (index) => {
-    setTodos([
-      ...todos.slice(0, index),
-      {
-        id: todos[index].id,
-        text: todos[index].text,
-        isChecked: !todos[index].isChecked,
-        isDeleted: todos[index].isDeleted,
-      },
-      ...todos.slice(index + 1, todos.length),
-    ])
-  }
-
-  const deleteTodo = (index) => {
-    setTodos([
-      ...todos.slice(0, index),
-      {
-        id: todos[index].id,
-        text: todos[index].text,
-        isChecked:
-          todos[index].isChecked === true ? true : !todos[index].isChecked,
-        isDeleted: !todos[index].isDeleted,
-      },
-      ...todos.slice(index + 1, todos.length),
-    ])
-  }
+  const todoList = useRecoilValue(filteredTodoListState)
+  const { totalUncompleted } = useRecoilValue(todoListStatState)
 
   const clearCompleted = () => {
-    filter && setFilter("Uncompleted")
+    filter === "All" && setFilter("Uncompleted")
   }
+
+  const betterWording = totalUncompleted <= 1 ? "item left" : "items left"
 
   return (
     <StyledTodoListWrapper>
       <StyledTodoList>
         {todoList.map(
-          (todo, index) =>
-            !todo.isDeleted && (
-              <TodoListItem
-                key={todo.id}
-                todo={todo.text}
-                isChecked={todo.isChecked}
-                checkTodo={() => checkTodo(index)}
-                deleteTodo={() => deleteTodo(index)}
-              />
-            )
+          todo => !todo.isDeleted && <TodoListItem key={todo.id} item={todo} />
         )}
       </StyledTodoList>
       <StyledBottom>
-        <p className="itemLeft">{totalUncompleted} items left</p>
+        <p className="itemLeft">
+          {filter === "Completed" ? 0 : totalUncompleted} {betterWording}
+        </p>
         <FilterTodosDesktop />
-        <button
-          onClick={clearCompleted}
-          className="clearCompleted"
-          value="Show Uncompleted">
+        <button onClick={clearCompleted} className="clearCompleted">
           Clear Completed
         </button>
       </StyledBottom>

@@ -9,9 +9,9 @@ export const filteredTodoListState = selector({
 
     switch (filter) {
       case "Completed":
-        return todos.filter((todo) => todo.isChecked)
+        return todos.filter(todo => todo.isChecked)
       case "Uncompleted":
-        return todos.filter((todo) => !todo.isChecked)
+        return todos.filter(todo => !todo.isChecked)
       default:
         return todos
     }
@@ -21,9 +21,9 @@ export const filteredTodoListState = selector({
 export const todoListStatState = selector({
   key: "TodoListStats",
   get: ({ get }) => {
-    const todoList = get(todoListState)
-    const totalUncompleted = todoList.filter((todo) => !todo.isChecked).length
-    
+    const todos = get(todoListState)
+    const totalUncompleted = todos.filter(todo => !todo.isChecked).length
+
     return {
       totalUncompleted,
     }

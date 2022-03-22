@@ -8,10 +8,10 @@ export default function AddTodo() {
   const [inputValue, setInputValue] = useState("")
   const setTodoList = useSetRecoilState(todoListState)
 
-  const addTodo = (e) => {
+  const addTodo = e => {
     e.preventDefault()
     inputValue &&
-      setTodoList((oldTodoList) => [
+      setTodoList(oldTodoList => [
         ...oldTodoList,
         {
           id: uuidv4(),

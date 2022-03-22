@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
-export const StyledInformation = styled.aside`
-  color: ${(props) => props.theme.todolistBottom};
+export const StyledDnD = styled.aside`
+  color: ${props => props.theme.todolistBottom};
   font-size: 1.4rem;
   letter-spacing: -0.19px;
   padding-bottom: 40px;
