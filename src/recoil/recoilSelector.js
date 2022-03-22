@@ -12,6 +12,8 @@ export const filteredTodoListState = selector({
         return todos.filter(todo => todo.isChecked)
       case "Uncompleted":
         return todos.filter(todo => !todo.isChecked)
+      case "Clear":
+        return todos.filter(todo => !todo.isChecked)
       default:
         return todos
     }

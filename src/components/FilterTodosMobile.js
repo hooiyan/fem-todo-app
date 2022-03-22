@@ -17,7 +17,11 @@ export default function FilterTodosMobile({
       <button
         onClick={showAll}
         className={`${
-          todoFilterState === "All" ? "all option selected" : "all option"
+          todoFilterState === "All"
+            ? "all option selected"
+            : todoFilterState === "Clear"
+            ? "all option selected"
+            : "all option"
         }`}>
         All
       </button>

@@ -22,7 +22,7 @@ export default function TodoList() {
   const { totalUncompleted } = useRecoilValue(todoListStatState)
 
   const clearCompleted = () => {
-    filter === "All" && setFilter("Uncompleted")
+    filter === "All" && setFilter("Clear")
   }
 
   const betterWording = totalUncompleted <= 1 ? "item left" : "items left"

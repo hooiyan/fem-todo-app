@@ -23,7 +23,11 @@ export default function FilterTodosDesktop() {
       <button
         onClick={showAll}
         className={`${
-          filter === "All" ? "all option selected" : "all option"
+          filter === "All"
+            ? "all option selected"
+            : filter === "Clear"
+            ? "all option selected"
+            : "all option"
         }`}>
         All
       </button>
