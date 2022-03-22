@@ -18,8 +18,6 @@ export default function TodoList() {
   const { totalUncompleted } = useRecoilValue(todoListStatState)
   const [filter, setFilter] = useRecoilState(todoListFilterState)
 
-  const incompleteTodos = todoList.filter((todo) => !todo.isChecked)
-
   const checkTodo = (index) => {
     setTodos([
       ...todos.slice(0, index),
