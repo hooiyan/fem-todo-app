@@ -1,5 +1,9 @@
-import { useRecoilState } from "recoil"
-import { todoListState } from "../recoil/todoListState"
+import { useRecoilState, useRecoilValue } from "recoil"
+import { todoListState, todoListFilterState } from "../recoil/recoilState"
+import {
+  filteredTodoListState,
+  todoListStatState,
+} from "../recoil/recoilSelector"
 import TodoListItem from "./TodoListItem"
 import FilterTodosDesktop from "./FilterTodosDesktop"
 import {
@@ -10,14 +14,17 @@ import {
 
 export default function TodoList() {
   const [todos, setTodos] = useRecoilState(todoListState)
+  const todoList = useRecoilValue(filteredTodoListState)
+  const { totalUncompleted } = useRecoilValue(todoListStatState)
+  const [filter, setFilter] = useRecoilState(todoListFilterState)
 
-  // const completedTodos = todos.filter((todo) => todo.isChecked)
-  const incompleteTodos = todos.filter((todo) => !todo.isChecked)
+  const incompleteTodos = todoList.filter((todo) => !todo.isChecked)
 
   const checkTodo = (index) => {
     setTodos([
       ...todos.slice(0, index),
       {
+        id: todos[index].id,
         text: todos[index].text,
         isChecked: !todos[index].isChecked,
         isDeleted: todos[index].isDeleted,
@@ -30,6 +37,7 @@ export default function TodoList() {
     setTodos([
       ...todos.slice(0, index),
       {
+        id: todos[index].id,
         text: todos[index].text,
         isChecked:
           todos[index].isChecked === true ? true : !todos[index].isChecked,
@@ -40,33 +48,17 @@ export default function TodoList() {
   }
 
   const clearCompleted = () => {
-    setTodos(incompleteTodos)
-  }
-
-  const showAll = () => {
-    // Show completed & incomplete todos
-    // Basically every todo that is not deleted
-    console.log("show all")
-  }
-
-  const showActive = () => {
-    // Show incomplete todos only
-    console.log("show active")
-  }
-
-  const showCompleted = () => {
-    // Show completed todos only
-    console.log("show completed")
+    filter && setFilter("Uncompleted")
   }
 
   return (
     <StyledTodoListWrapper>
       <StyledTodoList>
-        {todos.map(
+        {todoList.map(
           (todo, index) =>
             !todo.isDeleted && (
               <TodoListItem
-                key={index}
+                key={todo.id}
                 todo={todo.text}
                 isChecked={todo.isChecked}
                 checkTodo={() => checkTodo(index)}
@@ -76,13 +68,12 @@ export default function TodoList() {
         )}
       </StyledTodoList>
       <StyledBottom>
-        <p className="itemLeft">{incompleteTodos.length} items left</p>
-        <FilterTodosDesktop
-          showAll={showAll}
-          showActive={showActive}
-          showCompleted={showCompleted}
-        />
-        <button onClick={clearCompleted} className="clearCompleted">
+        <p className="itemLeft">{totalUncompleted} items left</p>
+        <FilterTodosDesktop />
+        <button
+          onClick={clearCompleted}
+          className="clearCompleted"
+          value="Show Uncompleted">
           Clear Completed
         </button>
       </StyledBottom>

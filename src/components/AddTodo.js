@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { useSetRecoilState } from "recoil"
-import { todoListState } from "../recoil/todoListState"
+import { v4 as uuidv4 } from "uuid"
+import { todoListState } from "../recoil/recoilState"
 import { StyledForm } from "../styles/StyledAddTodo"
 
 export default function AddTodo() {
@@ -13,6 +14,7 @@ export default function AddTodo() {
       setTodoList((oldTodoList) => [
         ...oldTodoList,
         {
+          id: uuidv4(),
           text: inputValue,
           isChecked: false,
           isDeleted: false,
