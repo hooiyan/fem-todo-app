@@ -10,7 +10,6 @@ export default function FilterTodosMobile({
   showCompleted,
 }) {
   const todoFilterState = useRecoilValue(todoListFilterState)
-  console.log(todoFilterState)
 
   return (
     <StyledFilterTodoMobile>
