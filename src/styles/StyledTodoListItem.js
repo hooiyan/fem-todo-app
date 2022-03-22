@@ -31,6 +31,7 @@ export const StyledTodoContent = styled.span`
 `
 
 export const StyledCrossIcon = styled.img`
+  cursor: pointer;
   height: 12px;
   width: 12px;
 
