@@ -35,7 +35,9 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![](./src/images/screenshots/dark.png)
+
+![](./src/images/screenshots/light.png)
 
 ### Links
 
@@ -54,12 +56,14 @@ Users should be able to:
 - [Recoil](https://recoiljs.org/) - State Management
 - [recoil-persist](https://github.com/polemius/recoil-persist) - localStorage for Recoil
 - [React Beautiful DnD](https://github.com/atlassian/react-beautiful-dnd) - Drag n Drop capability
-- [styled-components](https://styled-components.com/) - CSS in JS
+- [Styled Components](https://styled-components.com/) - CSS in JS
 - [uuid](https://github.com/uuidjs/uuid) - Unique ID generation
 
 ### What I learned
 
+At first, I planned to build this app with everything that I can do with just React (such as React state and CSS Modules) without installing external packages. However, I decided to integrate [Recoil](https://recoiljs.org/) and [Styled Components](https://styled-components.com/) into the app. 
 
+CSS Modules is working well for me until I want to add the theme switching capability.
 
 ### Continued development
 
@@ -68,14 +72,9 @@ Users should be able to:
 ### Useful resources
 
 - [Create custom checkboxes](https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_custom_checkbox) - This has helped me in creating custom checkboxed that are used in the project.
-- [Gradient borders in CSS](https://css-tricks.com/gradient-borders-in-css/)
-- https://jscircle.com/react-theme-switching-with-context-api-and-styled-components/
-- https://simplernerd.com/js-delete-element-from-state-array-by-index/
-- https://medium.com/bigpanda-engineering/dark-theme-with-styled-components-a573dd898e2a
-- https://www.jonathan-harrell.com/blog/system-based-theming-with-styled-components/
-- https://codesandbox.io/s/dark-mode-styled-components-hfgp7?file=/src/App.js
-- https://www.freecodecamp.org/news/how-to-add-drag-and-drop-in-react-with-react-beautiful-dnd/
-- https://codesandbox.io/s/v3p0q71qn5
+- [Gradient borders in CSS](https://css-tricks.com/gradient-borders-in-css/) - This has helped me in creating a special gradient border when hovering the checkbox. The trick is to wrap the custom checkbox with an additional `div`.
+- [Dark Theme with Styled Components](https://medium.com/bigpanda-engineering/dark-theme-with-styled-components-a573dd898e2a)
+- [How to Add Drag and Drop in React with React Beautiful DnD](https://www.freecodecamp.org/news/how-to-add-drag-and-drop-in-react-with-react-beautiful-dnd/)
 
 ## Author
 
