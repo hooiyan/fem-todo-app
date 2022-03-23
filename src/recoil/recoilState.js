@@ -1,5 +1,8 @@
 import { atom } from "recoil"
+import { recoilPersist } from "recoil-persist"
 import { v4 as uuidv4 } from "uuid"
+
+const { persistAtom } = recoilPersist()
 
 export const todoListState = atom({
   key: "TodoList",
@@ -41,6 +44,7 @@ export const todoListState = atom({
       isDeleted: false,
     },
   ],
+  effects_UNSTABLE: [persistAtom],
 })
 
 export const todoListFilterState = atom({
