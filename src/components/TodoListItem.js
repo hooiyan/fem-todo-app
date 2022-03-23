@@ -35,7 +35,6 @@ export default function TodoListItem({ item, provided, innerRef }) {
       {...provided.dragHandleProps}
       ref={innerRef}>
       <Checkbox checkTodo={checkTodo} isChecked={item.isChecked} />
-      {/* If a todo item is checked by default, apply the checked styles. The checked styles should be controlled by isChecked */}
       <StyledTodoContent isChecked={item.isChecked}>
         {item.text}
       </StyledTodoContent>
