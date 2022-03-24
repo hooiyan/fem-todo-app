@@ -12,7 +12,7 @@ export default function AddTodo() {
 
   const addTodo = e => {
     e.preventDefault()
-    inputValue &&
+    inputValue.trim() &&
       setTodos(oldTodos => [
         ...oldTodos,
         {
