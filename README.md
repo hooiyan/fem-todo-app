@@ -1,37 +1,35 @@
-# Frontend Mentor - Todo app solution
-
-This is a solution to the [Todo app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/todo-app-Su1_KokOW). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+# React Todo App
 
 ## Table of contents
 
-- [Frontend Mentor - Todo app solution](#frontend-mentor---todo-app-solution)
+- [React Todo App](#react-todo-app)
   - [Table of contents](#table-of-contents)
   - [Overview](#overview)
-    - [The challenge](#the-challenge)
-    - [Screenshot](#screenshot)
+    - [Summary](#summary)
     - [Links](#links)
-  - [My process](#my-process)
-    - [Built with](#built-with)
-    - [What I learned](#what-i-learned)
-    - [Continued development](#continued-development)
+    - [Screenshot](#screenshot)
+  - [Details](#details)
+    - [Project purpose and goal](#project-purpose-and-goal)
+    - [Web stack and explanation](#web-stack-and-explanation)
+    - [Problem and thought process](#problem-and-thought-process)
+    - [Lesson learned](#lesson-learned)
+    - [Future improvements](#future-improvements)
     - [Useful resources](#useful-resources)
+  - [Getting started](#getting-started)
+    - [Installing](#installing)
+  - [Contributing](#contributing)
   - [Author](#author)
 
 ## Overview
 
-### The challenge
+### Summary
 
-Users should be able to:
+A dark/light themed React web app built together with Styled Components and Recoil that allows users to add, mark, and delete to-do items. The users can drag and drop to reorder the to-do items.
 
-- [x] View the optimal layout for the app depending on their device's screen size
-- [x] See hover states for all interactive elements on the page
-- [x] Add new todos to the list
-- [x] Mark todos as complete
-- [x] Delete todos from the list
-- [x] Filter by all/active/complete todos
-- [x] Clear all completed todos
-- [x] Toggle light and dark mode
-- [x] **Bonus**: Drag and drop to reorder items on the list
+### Links
+
+- Solution URL: [GitHub](https://github.com/hooiyan/fem-todo-app)
+- Live Site URL: [Netlify](https://h2y-todo.netlify.app/)
 
 ### Screenshot
 
@@ -39,14 +37,14 @@ Users should be able to:
 
 ![](./src/images/screenshots/light.png)
 
-### Links
 
-- Solution URL: [View it on GitHub](https://github.com/hooiyan/fem-todo-app)
-- Live Site URL: [View it on Vercel](https://h2y-todo.vercel.app/)
+## Details
 
-## My process
+### Project purpose and goal
 
-### Built with
+One of my goals in becoming a front-end developer is to build at least one to-do app in my lifetime. This might be an overused project but I think it is a nice project for us to get hold of the basics of front-end development.
+
+### Web stack and explanation
 
 - Semantic HTML5 markup
 - CSS custom properties
@@ -59,23 +57,25 @@ Users should be able to:
 - [Styled Components](https://styled-components.com/) - CSS in JS
 - [uuid](https://github.com/uuidjs/uuid) - Unique ID generation
 
-### What I learned
 
-At first, I planned to build this app with everything that I can do with just React (such as React state and CSS Modules) without installing external packages. However, I decided to integrate [Recoil](https://recoiljs.org/) and [Styled Components](https://styled-components.com/) into the app. 
+At first, I planned to build this app with everything that I can do with just React (such as React state and CSS Modules) without installing external packages. However, I decided to integrate Recoil and Styled Components into the app. 
 
-<!-- CSS Modules is working well for me until I want to add theme switching capability. I think it is possible to realize that with CSS Modules. But I find it would be easier to use a better tool for this problem. -->
+React has always been my go-to framework for building web apps. I have heard of Recoil before and thought of giving it a try this time. I am glad that I chose it as the state management for this app. It is easy to get started with and I think it pairs with React very well.
 
-Previously, I have always been working on the main branch only. In this project, I tried to make use of **git branching** into my workflow. And it has helped me to not mess up with the main code. When I have to add something new to the project that might break the app, I create a new branch and continue working on that new feature.
+### Problem and thought process
+
+CSS Modules is working well for me until I want to add theme switching capability. I think it is possible to realize that with CSS Modules. But I find it would be easier to use Styled Components in this case.
 
 Most importantly, there's this one bug that had been bothering me for a day or two. I was not able to find the cause and I was frustrated. Luckily, I did find the cause when I was reviewing the `map` function that is used to loop over the todo items. 
 
 The **problem** is that whenever I delete a todo that is previously being checked off, which has a different styling from the one that has not been checking off yet, the styles will be applied to the next todo item. This is not what we want because the next item is supposed to have its original styling applied to it. _So why does this happen?_ Well, it's because I did not give a unique value for the `key` props.
 
-In React, we are required to provide a special props called `key` in each list item and it needs to be **UNIQUE**. I chose to provide `index` that we got from the `map` function. `index` does work in some cases, but we shouldn't rely on it because it does not guarantee the uniqueness.
+### Lesson learned
 
-### Continued development
+1. Previously, I have always been working on the main branch only. In this project, I tried to make use of **git branching** into my workflow. And it has helped me to not mess up with the main code. When I have to add something new to the project that might break the app, I create a new branch and continue working on that new feature.
+2. In React, we are required to provide a special props called `key` in each list item and it needs to be **UNIQUE**. I chose to provide `index` that we got from the `map` function. `index` does work in some cases, but we shouldn't rely on it because it does not guarantee the uniqueness.
 
-Some improvements I might add later:
+### Future improvements
 
 - [ ] Add animations when tasks are deleted
 - [ ] The ability to favorite a task and have it appear at the top of the list
@@ -89,6 +89,27 @@ Some improvements I might add later:
 - [Dark Theme with Styled Components](https://medium.com/bigpanda-engineering/dark-theme-with-styled-components-a573dd898e2a)
 - [How to Add Drag and Drop in React with React Beautiful DnD](https://www.freecodecamp.org/news/how-to-add-drag-and-drop-in-react-with-react-beautiful-dnd/)
 
+## Getting started
+
+These instructions will get you a copy of the project up and running on your local machine for development and testing purpose.
+
+### Installing
+
+Clone the repository and run the development server:
+
+```bash
+npm install
+npm start
+# or
+yarn install
+yarn start
+```
+
+## Contributing
+
+Please feel free to send pull request if you want to contribute!
+
 ## Author
 
+- Website - [hooiyan](https://hooiyan.netlify.app)
 - Frontend Mentor - [@hooiyan](https://www.frontendmentor.io/profile/hooiyan)
