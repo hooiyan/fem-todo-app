@@ -29,7 +29,7 @@ A dark/light themed React web app built together with Styled Components and Reco
 ### Links
 
 - Solution URL: [GitHub](https://github.com/hooiyan/fem-todo-app)
-- Live Site URL: [Netlify](https://h2y-todo.netlify.app/)
+- Live Site URL: [Netlify](https://hy-todo.netlify.app/)
 
 ### Screenshot
 
